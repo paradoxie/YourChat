@@ -7,6 +7,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Toast;
 
+import com.paradox.yourchat.BuildConfig;
 import com.paradox.yourchat.R;
 import com.paradox.yourchat.activity.MainActivity;
 import com.paradox.yourchat.base.BaseActivity;
@@ -25,7 +26,7 @@ public class WelcomeActivity extends BaseActivity {
 
     @Override
     public void initViewWithData() {
-
+        binding.tvVersion.setText(BuildConfig.VERSION_NAME);
         String token = SPUtil.get("key", "").toString();
         if (!TextUtils.isEmpty(token)) {
             binding.clInput.setVisibility(View.GONE);

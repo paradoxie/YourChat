@@ -3,6 +3,7 @@ package com.paradox.yourchat.http;
 import com.ihsanbal.logging.Level;
 import com.ihsanbal.logging.LoggingInterceptor;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+import com.paradox.yourchat.BuildConfig;
 
 import java.util.concurrent.TimeUnit;
 
@@ -35,7 +36,7 @@ public class RetrofitManager {
 
     private void create() {
 
-        String url = "https://api.openai.com/v1/chat/";
+        String url = BuildConfig.SERVER;
 
         OkHttpClient.Builder builder = new OkHttpClient().newBuilder();
         builder.readTimeout(10, TimeUnit.SECONDS);

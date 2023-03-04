@@ -8,18 +8,44 @@ android {
 
     defaultConfig {
         applicationId "com.paradox.yourchat"
-        minSdk 24
-        targetSdk 33
-        versionCode 1
-        versionName "1.0"
+
+        minSdk rootProject.ext.MINSDK_VERSION
+        targetSdk rootProject.ext.TARGETSDK_VERSION
+        versionCode rootProject.ext.VERSION_CODE
+        versionName rootProject.ext.VERSION_NAME
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    buildTypes {
+    signingConfigs {
         release {
+            storeFile file("/Users/paradox/AndroidStudioProjects/key/bear_sign")
+            storePassword "zwtxzq"
+            keyAlias "bear"
+            keyPassword "zwtxzq"
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField(this.rootProject.ext.TYPE, this.rootProject.ext.SERVER, this.rootProject.ext.host)
+            multiDexEnabled true
+            zipAlignEnabled true
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            shrinkResources false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            buildConfigField(this.rootProject.ext.TYPE, this.rootProject.ext.SERVER, this.rootProject.ext.host)
+            multiDexEnabled true
+            zipAlignEnabled true
+            minifyEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
     compileOptions {
@@ -29,6 +55,21 @@ android {
 
     buildFeatures {
         dataBinding = true
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            outputFileName = "${buildType.name}-${variant.versionName}-${variant.versionCode}.apk"
+            variant.getAssembleProvider().configure() {
+                it.doLast {
+                    project.copy {
+                        from "${output.outputFile}"
+                        into "${output.outputFile.parent}/history"
+                        println "copy file from ${output.outputFile}  to  ${output.outputFile.parent}/history"
+                    }
+                }
+            }
+        }
     }
 }
 
