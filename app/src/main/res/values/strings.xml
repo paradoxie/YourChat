@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">YourChat</string>
+    <string name="please_input_your_key">please input your chat-gpt key</string>
+    <string name="str_next">next</string>
+    <string name="str_input">waiting input</string>
+
+    <string name="please_input_something">please input something</string>
+    <string name="exit_app">press again to exit app!</string>
+    <string name="history_chat">history</string>
+    <string name="your_own_chat_gpt">your own chat-GPT</string>
+
+</resources>
