@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">我的Chat-GPT</string>
+    <string name="please_input_your_key">请输入你的chat-gpt key</string>
+    <string name="str_next">下一步</string>
+    <string name="str_input">等待输入</string>
+
+    <string name="setting">设置</string>
+
+    <string name="please_input_something">请输入内容</string>
+    <string name="exit_app">再按一次退出app!</string>
+    <string name="history_chat">历史</string>
+    <string name="your_own_chat_gpt">your own chat-GPT</string>
+
+    <string name="general_scene">通用场景</string>
+    <string name="general_info">随便聊聊</string>
+    <string name="history">历史</string>
+    <string name="enter">进入</string>
+    <string name="other_scene">其他场景</string>
+    <string name="stay_tuned">敬请期待</string>
+    <string name="system">系统</string>
+    <string name="current_model">当前会话模型</string>
+    <string name="cancel">取消</string>
+    <string name="confirm">确定</string>
+    <string name="input_your_question">请输入要发送的内容</string>
+    <string name="send">发送</string>
+    <string name="exit_conversation">退出会话</string>
+    <string name="exit_con_info">退出后当前会话环境将结束，确认退出吗?</string>
+    <string name="back">返回</string>
+    <string name="confirm_exit">确认退出</string>
+    <string name="conversation_details">会话详情</string>
+    <string name="history_list">历史记录</string>
+    <string name="delete_con">删除这段会话</string>
+    <string name="delete_info">删除不可恢复，确认删除吗?</string>
+    <string name="confirm_delete">确认删除</string>
+    <string name="deleted_successfully">删除成功</string>
+    <string name="copied">已复制:</string>
+</resources>

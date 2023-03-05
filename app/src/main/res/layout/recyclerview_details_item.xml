@@ -25,7 +25,7 @@
         android:background="@drawable/bg_white_corner_stroke_10"
         android:textSize="20sp" />
 
-    <com.paradox.yourchat.view.MyTextView
+    <TextView
         android:id="@+id/tv_receive"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

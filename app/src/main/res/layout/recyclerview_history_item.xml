@@ -4,6 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:id="@+id/rl"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="@drawable/bg_white_corner_10"
     android:padding="10dp">
 
     <TextView
@@ -11,7 +15,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/button_label"
+        android:focusable="false"
+        android:clickable="false"
         android:textSize="12sp" />
 
     <TextView
@@ -25,13 +30,16 @@
         android:background="@drawable/bg_white_corner_stroke_10"
         android:textSize="20sp" />
 
-    <com.paradox.yourchat.view.MyTextView
+    <TextView
         android:id="@+id/tv_receive"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
+        android:layout_marginTop="5dp"
         android:layout_below="@id/tv_send"
         android:layout_alignParentStart="true"
+        android:maxLines="2"
+        android:ellipsize="end"
         android:background="@drawable/bg_white_corner_stroke_10"
         android:textSize="20sp" />
 

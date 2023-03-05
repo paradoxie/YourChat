@@ -18,6 +18,7 @@ public class ChatResBean {
     private int created;
     private String model;
     private UsageBean usage;
+    private ErrorBean error;
     private List<ChoicesBean> choices;
 
     public String getId() {
@@ -58,6 +59,14 @@ public class ChatResBean {
 
     public void setUsage(UsageBean usage) {
         this.usage = usage;
+    }
+
+    public ErrorBean getError() {
+        return error;
+    }
+
+    public void setError(ErrorBean error) {
+        this.error = error;
     }
 
     public List<ChoicesBean> getChoices() {
@@ -165,6 +174,27 @@ public class ChatResBean {
             public void setContent(String content) {
                 this.content = content;
             }
+        }
+    }
+
+    public static class ErrorBean {
+        private String message;
+        private String code;
+
+        public String getMessage() {
+            return message;
+        }
+
+        public void setMessage(String message) {
+            this.message = message;
+        }
+
+        public String getCode() {
+            return code;
+        }
+
+        public void setCode(String code) {
+            this.code = code;
         }
     }
 }

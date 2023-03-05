@@ -14,6 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.YourChat"
         tools:targetApi="31">
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@xml/pref_setting" />
+
         <activity
             android:name=".activity.WelcomeActivity"
             android:exported="true">
@@ -23,13 +27,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".activity.MainActivity"
+        <activity
+            android:name=".activity.MainActivity"
             android:configChanges="keyboardHidden|screenSize|orientation"
-            android:screenOrientation="userPortrait"/>
-        <activity android:name=".activity.ChatActivity"
-            android:configChanges="keyboardHidden|screenSize|orientation"
-            android:screenOrientation="userPortrait"/>
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.ChatActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.HistoryListActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.HistoryDetailsActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.SettingActivity"
+            android:screenOrientation="userPortrait" />
     </application>
 
 </manifest>

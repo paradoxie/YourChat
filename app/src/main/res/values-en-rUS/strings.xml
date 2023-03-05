@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">YourChat</string>
     <string name="please_input_your_key">please input your chat-gpt key</string>
@@ -10,6 +11,7 @@
     <string name="exit_app">press again to exit app!</string>
     <string name="history_chat">history</string>
     <string name="your_own_chat_gpt">your own chat-GPT</string>
+
     <string name="general_scene">General scene</string>
     <string name="general_info">just ask</string>
     <string name="history">history</string>
@@ -33,5 +35,4 @@
     <string name="confirm_delete">Confirm</string>
     <string name="deleted_successfully">deleted successfully</string>
     <string name="copied">copied</string>
-
 </resources>

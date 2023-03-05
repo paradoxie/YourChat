@@ -22,6 +22,7 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.paradox.yourchat.R;
 
 import java.text.SimpleDateFormat;
@@ -46,19 +47,18 @@ public enum CommonUtil {
         if (TextUtils.isEmpty(content)) {
             return;
         }
-
+        ToastUtils.showShort(content);
     }
 
     /**
      * 复制到粘贴板
      *
-     * @param activity
      * @param s
      */
-    public void copy(Activity activity, String s) {
-        cm = (ClipboardManager) activity.getSystemService(Context.CLIPBOARD_SERVICE);
+    public void copy(String s) {
+        cm = (ClipboardManager) mContext.getSystemService(Context.CLIPBOARD_SERVICE);
         cm.setText(s);
-        toast("复制成功");
+        toast(mContext.getString(R.string.copied) + s);
     }
 
 
@@ -163,6 +163,7 @@ public enum CommonUtil {
 
     /**
      * 获取当前时间
+     *
      * @return
      */
     public String getCurrentTime() {

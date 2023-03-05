@@ -13,11 +13,11 @@ public interface CommonDao {
 
     //插入一条数据
     @Insert
-    void insert(CommonEntity commonEntity);
+    long insert(CommonEntity commonEntity);
 
     //删除一条数据
     @Query("DELETE FROM commonentity WHERE id= :hisId")
-    void delete(String hisId);
+    void delete(int hisId);
 
     //删除所有数据
     @Query("DELETE  FROM commonentity")
@@ -25,15 +25,19 @@ public interface CommonDao {
 
 
     //更新一条数据
-    @Update
-    void update(CommonEntity classify);
+    @Update()
+    void update(CommonEntity commonEntity);
+
+    //更新一条数据
+    @Query("UPDATE commonentity SET content= :con WHERE comId= :id")
+    void update(String id, String con);
 
 
     //查询一条数据
-    @Query("SELECT * FROM commonentity WHERE id= :hisId")
+    @Query("SELECT * FROM commonentity WHERE comId= :hisId")
     LiveData<CommonEntity> get(String hisId);
 
     //查询所有内容
-    @Query("SELECT * FROM commonentity")
+    @Query("SELECT * FROM commonentity ORDER BY id DESC")
     LiveData<List<CommonEntity>> getAll();
 }

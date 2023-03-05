@@ -19,6 +19,7 @@ import com.paradox.yourchat.databinding.ActivityMainBinding;
 import com.alibaba.fastjson.JSONObject;
 import com.paradox.yourchat.http.HttpUtil;
 import com.paradox.yourchat.http.MyException;
+import com.paradox.yourchat.room.common.CommonEntity;
 import com.paradox.yourchat.util.CommonUtil;
 
 import java.util.ArrayList;
@@ -45,7 +46,23 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void initViewWithData() {
+        binding.clCommon.setOnClickListener(v -> {
+            gotoActivity(ChatActivity.class);
+        });
+        binding.tvCommonIn.setOnClickListener(v -> {
+            gotoActivity(ChatActivity.class);
+        });
 
+        binding.tvCommonHistory.setOnClickListener(v -> {
+            gotoActivity(HistoryListActivity.class);
+        });
+
+        binding.llSpecial.setOnClickListener(v -> {
+            CommonUtil.INSTANCE.toast(getResources().getString(R.string.stay_tuned));
+        });
+        binding.tvSetting.setOnClickListener(v -> {
+            gotoActivity(SettingActivity.class);
+        });
     }
 
 

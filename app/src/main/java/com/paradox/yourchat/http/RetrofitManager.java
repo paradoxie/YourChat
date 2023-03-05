@@ -42,6 +42,7 @@ public class RetrofitManager {
         builder.readTimeout(10, TimeUnit.SECONDS);
         builder.connectTimeout(10, TimeUnit.SECONDS);
         builder.writeTimeout(10, TimeUnit.SECONDS);
+        builder.retryOnConnectionFailure(false);
         builder.addNetworkInterceptor(new HeaderInterceptor());
 
         LoggingInterceptor httpLoggingInterceptor = new LoggingInterceptor.Builder()

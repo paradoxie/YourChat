@@ -7,6 +7,8 @@ import androidx.lifecycle.ViewModel;
 
 import com.paradox.yourchat.base.MyApplication;
 
+import java.util.List;
+
 
 public class CommonViewModel extends ViewModel {
     private CommonRepository commonRepository;
@@ -35,9 +37,35 @@ public class CommonViewModel extends ViewModel {
     }
 
     /**
+     * 查询所有记录
+     *
+     */
+    public LiveData<List<CommonEntity>> getAll() {
+        return commonRepository.getAll();
+    }
+
+    /**
+     * 更新
+     *
+     * @param commonEntity
+     */
+    public void update(CommonEntity commonEntity) {
+        commonRepository.update(commonEntity);
+    }
+
+    /**
+     * 更新
+     * @param comId
+     * @param content
+     */
+    public void update(String comId,String content) {
+        commonRepository.update(comId,content);
+    }
+
+    /**
      * 删除一条记录
      */
-    public void delete(String hisId) {
+    public void delete(int hisId) {
         commonRepository.delete(hisId);
     }
 

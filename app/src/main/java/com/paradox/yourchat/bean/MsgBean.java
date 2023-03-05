@@ -17,6 +17,11 @@ public class MsgBean {
         this.time = time;
     }
 
+    public MsgBean(String content, int type) {
+        this.content = content;
+        this.type = type;
+    }
+
     public String getContent() {
         return content;
     }

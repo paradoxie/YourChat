@@ -14,7 +14,7 @@ public class MyTextView extends androidx.appcompat.widget.AppCompatTextView {
     private String mShowTextString = null;
     private Timer mTypeTimer = null;
     private OnTypeViewListener mOnTypeViewListener = null;
-    private static final int TYPE_TIME_DELAY = 80;
+    private static final int TYPE_TIME_DELAY = 30;
     private int mTypeTimeDelay = TYPE_TIME_DELAY;
 
     public MyTextView(Context context, AttributeSet attrs, int defStyle) {

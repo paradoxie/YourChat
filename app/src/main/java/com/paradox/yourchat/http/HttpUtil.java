@@ -1,6 +1,7 @@
 package com.paradox.yourchat.http;
 
 import android.app.Activity;
+import android.util.Log;
 
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -52,6 +53,7 @@ public class HttpUtil {
                     @Override
                     public void error(MyException myException) {
                         response.failed(myException);
+                        Log.e("error", myException.reason);
                     }
                 });
     }

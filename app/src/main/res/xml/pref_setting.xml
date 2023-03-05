@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <PreferenceCategory app:title="@string/system">
+
+        <Preference
+            android:icon="@mipmap/ic_key"
+            app:key="key"
+            app:title="OpenAi key" />
+        <Preference
+            app:icon="@mipmap/ic_launcher"
+            app:key="icon"
+            app:summary="gpt-3.5-turbo"
+            app:title="@string/current_model" />
+
+    </PreferenceCategory>
+
+    <!--    <PreferenceCategory app:title="关于">-->
+    <!--        <Preference-->
+    <!--            app:summary="我的主页"-->
+    <!--            app:title="跳转Preference">-->
+    <!--            <intent-->
+    <!--                android:action="android.intent.action.VIEW"-->
+    <!--                android:data="http://www.baidu.com" />-->
+    <!--        </Preference>-->
+
+    <!--    </PreferenceCategory>-->
+</PreferenceScreen>

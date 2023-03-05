@@ -103,7 +103,16 @@ dependencies {
         exclude group: 'org.json', module: 'json'
     }
 
+    //工具类，https://github.com/Blankj/AndroidUtilCode
+    implementation 'com.blankj:utilcodex:1.31.1'
+    implementation 'com.github.bumptech.glide:glide:4.15.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.15.0'
     //fastjson android,https://github.com/alibaba/fastjson
     implementation group: 'com.alibaba', name: 'fastjson', version: '1.2.47'
+    //共享model
+    implementation 'com.gitee.hijunmeng:share-model:1.0.0'
+    //livebus
+    implementation 'io.github.jeremyliao:live-event-bus-x:1.8.0'
 
+    implementation "androidx.preference:preference:1.2.0"
 }

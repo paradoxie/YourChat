@@ -1,6 +1,7 @@
 package com.paradox.yourchat.http;
 
 import android.app.Activity;
+import android.util.Log;
 
 import com.jakewharton.retrofit2.adapter.rxjava2.HttpException;
 import com.paradox.yourchat.base.BaseActivity;
@@ -14,7 +15,6 @@ import okhttp3.ResponseBody;
 
 public abstract class MyObserver<T> implements Observer<T> {
 
-    private CompositeDisposable compositeDisposable;
     private boolean showDialog = true;
     private final BaseActivity baseActivity;
 
@@ -36,6 +36,7 @@ public abstract class MyObserver<T> implements Observer<T> {
 
     @Override
     public void onNext(T t) {
+        Log.e("hahah", t.toString());
         next(t);
     }
 
@@ -54,13 +55,12 @@ public abstract class MyObserver<T> implements Observer<T> {
             } catch (IOException ioException) {
                 ioException.printStackTrace();
 //                myException.reason = Arrays.toString(ioException.getStackTrace());
-                myException.reason = "解析数据出错";
+                myException.reason = "error";
             }
         } else {
             myException.throwable = e;
             myException.reason = e.getMessage();
         }
-
 
 
     }

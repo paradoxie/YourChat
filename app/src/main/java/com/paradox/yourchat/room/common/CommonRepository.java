@@ -24,17 +24,42 @@ public class CommonRepository {
      *
      * @param commonEntity
      */
+    @SuppressLint("StaticFieldLeak")
     public void insert(CommonEntity commonEntity) {
         new AsyncTask<Void, Void, Void>() {
-
-            @SuppressLint("StaticFieldLeak")
             @Override
             protected Void doInBackground(Void... voids) {
-                commonDao.insert(commonEntity);
-                Log.e("插入成功", "");
+                long insertId = commonDao.insert(commonEntity);
+                Log.e("插入成功", "insertId:" + insertId);
                 return null;
             }
         }.execute();
+    }
+
+    @SuppressLint("StaticFieldLeak")
+    public void update(CommonEntity commonEntity) {
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... voids) {
+                commonDao.update(commonEntity);
+                Log.e("更新成功", commonEntity.toString());
+                return null;
+            }
+        }.execute();
+
+    }
+
+    @SuppressLint("StaticFieldLeak")
+    public void update(String comId, String content) {
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... voids) {
+                commonDao.update(comId, content);
+                Log.e("根据comId更新成功", content);
+                return null;
+            }
+        }.execute();
+
     }
 
     /**
@@ -60,7 +85,7 @@ public class CommonRepository {
     /**
      * 删除全部
      */
-    public void delete(String hisId) {
+    public void delete(int hisId) {
         new AsyncTask<Void, Void, Void>() {
 
             @Override

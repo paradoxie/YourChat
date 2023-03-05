@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey;
 public class CommonEntity {
     @PrimaryKey(autoGenerate = true)
     private int id;
-
+    private String comId;
     //发送
     private String send;
     //接受
@@ -17,8 +17,9 @@ public class CommonEntity {
     //对话内容
     private String content;
 
-    public CommonEntity(int id, String send, String receive, String create_time, String content) {
+    public CommonEntity(int id, String comId, String send, String receive, String create_time, String content) {
         this.id = id;
+        this.comId = comId;
         this.send = send;
         this.receive = receive;
         this.create_time = create_time;
@@ -26,11 +27,12 @@ public class CommonEntity {
     }
 
     @Ignore
-    public CommonEntity(int id, String send, String receive, String create_time) {
-        this.id = id;
+    public CommonEntity(String comId, String send, String receive, String create_time, String content) {
+        this.comId = comId;
         this.send = send;
         this.receive = receive;
         this.create_time = create_time;
+        this.content = content;
     }
 
     @Ignore
@@ -43,6 +45,14 @@ public class CommonEntity {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getComId() {
+        return comId;
+    }
+
+    public void setComId(String comId) {
+        this.comId = comId;
     }
 
     public String getSend() {
@@ -81,6 +91,7 @@ public class CommonEntity {
     public String toString() {
         return "CommonEntity{" +
                 "id=" + id +
+                ", comId='" + comId + '\'' +
                 ", send='" + send + '\'' +
                 ", receive='" + receive + '\'' +
                 ", create_time='" + create_time + '\'' +
